@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Login from "./components/Login";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
+import { Component } from "react";
+import Home from "./components/Home";
+import VideoPlay from "./components/VideoPlayContainer";
+import Trending from "./components/Trending";
+import Gaming from "./components/Gaming";
+import SavedVideos from "./components/SavedVideos";
+import FunctionaliContext from "./components/Context/FunctionaliContext";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = { lightMode: true };
+
+  changeTheme = () => {
+    this.setState((prevState) => ({ lightMode: !prevState.lightMode }));
+  };
+
+  render() {
+    const { lightMode } = this.state;
+    return (
+      <FunctionaliContext.Provider
+        value={{
+          lightMode,
+          changeTheme: this.changeTheme,
+        }}
+      >
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/videos/:id" component={VideoPlay} />
+            <Route exact path="/trending" component={Trending} />
+            <Route exact path="/gaming" component={Gaming} />
+            <Route exact path="/saved-videos" component={SavedVideos} />
+          </Switch>
+        </BrowserRouter>
+      </FunctionaliContext.Provider>
+    );
+  }
 }
 
 export default App;

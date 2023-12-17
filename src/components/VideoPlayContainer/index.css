@@ -1,0 +1,56 @@
+.video-play-details-container {
+    display: flex;
+}
+.video-play-description-details-container {
+    display: flex;
+    flex-direction: column;
+}
+.video-description {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 300;
+    margin-left: 10px;
+}
+.followers-and-like-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.followers {
+    display: flex;
+    align-items: center;
+}
+.followers-description {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 300;
+    margin-left: 10px;
+}
+.followers-icon {
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+}
+.hr-line {
+    color: #475569;
+    width: 1200px;
+}
+.like-share-comment {
+    display: flex;
+    align-items: center;
+}
+.like-dislike {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+.followers-details {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 300;
+}
+.like-button {
+    background-color: transparent;
+    border-width: 0px;
+    
+}
